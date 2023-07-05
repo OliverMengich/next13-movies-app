@@ -9,13 +9,27 @@ export const metadata = {
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <body className={inter.className}>
+                <section className='pt-3 pl-3 flex items-center justify-between w-full'>
+                    <div className=''>
+                        <p className='font-bold inline-block'> &#x2630;</p>
+                        <h2 className='inline-block text-2xl font-bold m-1'>MoviesApp</h2>
+                    </div>
+                    <div className='bg-zinc-800/30 pt-3 pb-3 pl-2 pr-2 pb rounded-xl w-1/3 flex justify-between'>
+                        <button>Filter</button>
+                        <input className='outline-none text-center bg-transparent' type="text" placeholder="Search" />
+                        <p className='font-medium'>&#128269;</p>
+                    </div>
+                    <button className='bg-none border p-2 backdrop-blur-2xl'>Sign In</button>
+                </section>
+                {children}
+            </body>
+        </html>
+    )
 }
